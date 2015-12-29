@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :hooks
   resources :orders
   resources :users
 
