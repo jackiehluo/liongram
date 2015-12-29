@@ -3,5 +3,6 @@ class HooksController
     puts params.inspect
     order = Order.new(:buyer_name => params[:Field1])
     order.save!
+    render :nothing => true
   end
 end
