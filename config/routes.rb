@@ -23,9 +23,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope '/hooks', :controller => :hooks do
-    post :new_order_callback
-  end
+  post 'new_order' => 'hooks#new_order_callback'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
