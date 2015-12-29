@@ -76,7 +76,7 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:buyer_name, :buyer_email, :recipient_name,
                                     :recipient_address, :date, :number,
-                                    :order_details, :message, :anonymous,
+                                    :items, :message, :anonymous,
                                     :venmo_username)
     end
 end

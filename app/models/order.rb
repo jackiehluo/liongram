@@ -8,7 +8,7 @@ class Order
   field :recipient_address, type: String
   field :date, type: Date
   field :number, type: Integer
-  field :order_details, type: String
+  field :items, type: String
   field :message, type: String
   field :anonymous, type: Boolean
   field :venmo_username, type: String
