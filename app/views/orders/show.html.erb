@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Buyer name:</strong>
+  <%= @order.buyer_name %>
+</p>
+
+<p>
+  <strong>Buyer email:</strong>
+  <%= @order.buyer_email %>
+</p>
+
+<p>
+  <strong>Recipient name:</strong>
+  <%= @order.recipient_name %>
+</p>
+
+<p>
+  <strong>Recipient address:</strong>
+  <%= @order.recipient_address %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @order.date %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @order.number %>
+</p>
+
+<p>
+  <strong>Order details:</strong>
+  <%= @order.order_details %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @order.message %>
+</p>
+
+<p>
+  <strong>Anonymous:</strong>
+  <%= @order.anonymous %>
+</p>
+
+<p>
+  <strong>Venmo username:</strong>
+  <%= @order.venmo_username %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

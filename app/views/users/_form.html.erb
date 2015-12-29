@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, "Name" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
@@ -20,14 +20,10 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password_digest %><br>
-    <%= f.text_field :password_digest %>
-  </div>
-  <div class="field">
-    <%= f.label :admin %><br>
-    <%= f.check_box :admin %>
+    <%= f.label :password, "Password" %><br>
+    <%= f.password_field :password %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", :class => "btn btn-success" %>
   </div>
 <% end %>

@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <meta content = 'text/html; charset = UTF-8' http-equiv = 'Content-Type' />
+  </head>
+   
+  <body>
+    <p>Hey, <%= @user.name %>!</p>
+    <p>
+       Thanks for registering for Liongram! To confirm your email, click <a href="<%= confirm_email_user_url(@user.confirm_token) %>">here</a>. After that, you'll need to be approved by an admin, and then you can access Liongram orders.
+    </p>
+    <p>Let us know if you have any questions.</p>
+  </body>
+</html>

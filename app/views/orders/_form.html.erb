@@ -1,0 +1,57 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :buyer_name %><br>
+    <%= f.text_field :buyer_name %>
+  </div>
+  <div class="field">
+    <%= f.label :buyer_email %><br>
+    <%= f.text_field :buyer_email %>
+  </div>
+  <div class="field">
+    <%= f.label :recipient_name %><br>
+    <%= f.text_field :recipient_name %>
+  </div>
+  <div class="field">
+    <%= f.label :recipient_address %><br>
+    <%= f.text_field :recipient_address %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :order_details %><br>
+    <%= f.text_field :order_details %>
+  </div>
+  <div class="field">
+    <%= f.label :message %><br>
+    <%= f.text_field :message %>
+  </div>
+  <div class="field">
+    <%= f.label :anonymous %><br>
+    <%= f.check_box :anonymous %>
+  </div>
+  <div class="field">
+    <%= f.label :venmo_username %><br>
+    <%= f.text_field :venmo_username %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
