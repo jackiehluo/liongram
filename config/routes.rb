@@ -23,6 +23,18 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users do
+    member do
+        get :approve
+    end
+  end
+
+  resources :users do
+    member do
+        get :change_admin_status
+    end
+  end
+
   scope '/hooks', :controller => :hooks do
     post :new_order_callback
   end

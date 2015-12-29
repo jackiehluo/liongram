@@ -10,13 +10,13 @@ class HooksController < ApplicationController
     order.date = Date.strptime(params[:Field232], "%Y%m%d")
     order.items = "#{params[:Field116]} #{params[:Field221]}"
     if params[:Field119]
-      order.items << "\n#{params[:Field119]} #{params[:Field222]}"
+      order.items << "<br>#{params[:Field119]} #{params[:Field222]}"
     end
     if params[:Field118]
-      order.items << "\n#{params[:Field118]} #{params[:Field223]}"
+      order.items << "<br>#{params[:Field118]} #{params[:Field223]}"
     end
     if params[:Field117]
-      order.items << "\n#{params[:Field117]} #{params[:Field224]}"
+      order.items << "<br>#{params[:Field117]} #{params[:Field224]}"
     end
     order.message = params[:Field234]
     order.anonymous = params[:Field336]

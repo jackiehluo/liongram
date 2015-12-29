@@ -2,22 +2,22 @@
   <p id="notice"><%= notice %></p>
 
   <p>
-    <strong>Buyer name:</strong>
+    <strong>Buyer Name:</strong>
     <%= @order.buyer_name %>
   </p>
 
   <p>
-    <strong>Buyer email:</strong>
+    <strong>Buyer Email:</strong>
     <%= @order.buyer_email %>
   </p>
 
   <p>
-    <strong>Recipient name:</strong>
+    <strong>Recipient Name:</strong>
     <%= @order.recipient_name %>
   </p>
 
   <p>
-    <strong>Recipient address:</strong>
+    <strong>Recipient Address:</strong>
     <%= @order.recipient_address %>
   </p>
 
@@ -28,7 +28,7 @@
 
   <p>
     <strong>Items:</strong>
-    <%= @order.items %>
+    <%= @order.items.html_safe %>
   </p>
 
   <p>
@@ -38,11 +38,15 @@
 
   <p>
     <strong>Anonymous:</strong>
-    <%= @order.anonymous %>
+    <% if @order.anonymous %>
+      Yes
+    <% else %>
+      No
+    <% end %>
   </p>
 
   <p>
-    <strong>Venmo username:</strong>
+    <strong>Venmo Username:</strong>
     <%= @order.venmo_username %>
   </p>
 

@@ -24,12 +24,15 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    @users = User.all
   end
 
   # POST /orders
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @user = User.find(params[:user_id][:id])
+    @user.orders << @order
 
     respond_to do |format|
       if @order.save
@@ -45,6 +48,8 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
+    @user = User.find(params[:user_id][:id])
+    @user.orders << @order
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }

@@ -29,6 +29,20 @@ class User
     save!(:validate => false)
   end
 
+  def approve
+    self.approved = true
+    save!(:validate => false)
+  end
+
+  def toggle_admin
+    if self.admin
+      self.admin = !self.admin
+    else
+      self.admin = true
+    end
+    save!(:validate => false)
+  end
+
   private
 
     def confirmation_token

@@ -1,5 +1,6 @@
 class Order
   include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
   belongs_to :user
 
   field :buyer_name, type: String

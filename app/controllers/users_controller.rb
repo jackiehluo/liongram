@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :approve,
+                                  :change_admin_status]
   skip_before_filter :require_user, :only => [:create, :new, :confirm_email]
 
   # GET /users
@@ -72,6 +73,26 @@ class UsersController < ApplicationController
     else
       flash[:error] = "We couldn't find that user."
       redirect_to root_url
+    end
+  end
+
+  def approve
+    if @user.approve
+      flash[:success] = "That user is now approved!"
+      redirect_to users_url
+    else
+      flash[:error] = "That didn't work!"
+      redirect_to users_url
+    end
+  end
+
+  def change_admin_status
+    if @user.toggle_admin
+      flash[:success] = "That user's admin change was successful."
+      redirect_to users_url
+    else
+      flash[:error] = "That didn't work!"
+      redirect_to users_url
     end
   end
 
