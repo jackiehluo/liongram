@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :require_user, :only => [:create, :new, :confirm_email]
 
   # GET /users
   # GET /users.json
@@ -64,16 +65,13 @@ class UsersController < ApplicationController
 
   def confirm_email
     user = User.find_by(confirm_token: params[:id])
-
-    respond_to do |format|
-      if user
-        user.email_activate
-        format.html { redirect_to login_url, notice: 'Success! Confirm your email to continue.' }
-        format.json { render login_path, status: :created, location: @user }
-      else
-        format.html { render root_path }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if user
+      user.email_activate
+      flash[:success] = "Your email has been confirmed."
+      redirect_to login_url
+    else
+      flash[:error] = "We couldn't find that user."
+      redirect_to root_url
     end
   end
 
