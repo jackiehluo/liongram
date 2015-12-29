@@ -1,6 +1,6 @@
 class HooksController
   def new_order_callback
-    log(request.body.read)
+    puts params.inspect
     order = Order.new(:buyer_name => params[:Field1])
     order.save!
   end
