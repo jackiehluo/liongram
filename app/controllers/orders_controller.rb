@@ -7,6 +7,11 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  # GET /my_orders
+  def user_index
+    @orders = @current_user.orders
+  end
+
   # GET /orders/1
   # GET /orders/1.json
   def show

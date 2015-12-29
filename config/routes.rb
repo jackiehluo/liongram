@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'session/destroy'
   get 'session/new'
 
-  root 'orders#index'
+  root 'orders#user_index'
+  get 'orders' => 'orders#index'
 
   get 'register' => 'users#new'
   get 'users' => 'users#index'

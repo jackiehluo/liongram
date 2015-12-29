@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        UsersMailer.registration_confirmation(@user).deliver
+        UsersMailer.registration_confirmation(@user).deliver_now
         format.html { redirect_to @user, notice: 'Success! Confirm your email to continue.' }
         format.json { render :show, status: :created, location: @user }
       else

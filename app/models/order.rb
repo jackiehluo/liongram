@@ -1,5 +1,7 @@
 class Order
   include Mongoid::Document
+  belongs_to :user
+
   field :buyer_name, type: String
   field :buyer_email, type: String
   field :recipient_name, type: String
@@ -8,6 +10,6 @@ class Order
   field :number, type: Integer
   field :order_details, type: String
   field :message, type: String
-  field :anonymous, type: Mongoid::Boolean
+  field :anonymous, type: Boolean
   field :venmo_username, type: String
 end

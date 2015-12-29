@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   include ActiveModel::SecurePassword
+  has_many :orders
 
   before_create :confirmation_token
 
