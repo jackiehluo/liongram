@@ -1,4 +1,4 @@
-class HooksController
+class HooksController < ApplicationController
   def new_order_callback
     puts params.inspect
     order = Order.new(:buyer_name => params[:Field1])
