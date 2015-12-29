@@ -25,7 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'mongoid', '~> 5.0.0.beta'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+# Add environment variables locally
+gem 'figaro', "~> 0.7.0"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
