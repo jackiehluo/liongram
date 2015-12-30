@@ -12,28 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :buyer_name %><br>
+    <%= f.label :buyer_name, "Buyer Name" %><br>
     <%= f.text_field :buyer_name %>
   </div>
   <div class="field">
-    <%= f.label :buyer_email %><br>
+    <%= f.label :buyer_email, "Buyer Email" %><br>
     <%= f.text_field :buyer_email %>
   </div>
   <div class="field">
-    <%= f.label :recipient_name %><br>
+    <%= f.label :recipient_name, "Recipient Name" %><br>
     <%= f.text_field :recipient_name %>
   </div>
   <div class="field">
-    <%= f.label :recipient_address %><br>
+    <%= f.label :recipient_address, "Recipient Address" %><br>
     <%= f.text_field :recipient_address %>
   </div>
   <div class="field">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :number %><br>
-    <%= f.number_field :number %>
   </div>
   <div class="field">
     <%= f.label :items %><br>
@@ -48,10 +44,10 @@
     <%= f.check_box :anonymous %>
   </div>
   <div class="field">
-    <%= f.label :venmo_username %><br>
+    <%= f.label :venmo_username, "Venmo Username" %><br>
     <%= f.text_field :venmo_username %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", :class => "btn btn-success" %>
   </div>
 <% end %>

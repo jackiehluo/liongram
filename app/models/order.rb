@@ -7,7 +7,6 @@ class Order
   field :recipient_name, type: String
   field :recipient_address, type: String
   field :date, type: Date
-  field :number, type: Integer
   field :items, type: String
   field :message, type: String
   field :anonymous, type: Boolean

@@ -14,3 +14,76 @@
  *= require_self
  *= require bootstrap.min
  */
+
+body {
+  font-family: 'Raleway' !important;
+  -webkit-animation-delay: 0.1s;
+  -webkit-animation-name: fontfix;
+  -webkit-animation-duration: 0.1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+}
+
+textarea {
+    resize: none;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway' !important;
+  font-weight: 700 !important;
+}
+
+h1 {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+h1 i {
+  font-size: 20px !important;
+}
+
+h3 i {
+  font-size: 15px !important;
+}
+
+li, p, th, td {
+  font-family: 'Raleway';
+}
+
+i {
+  color: black;
+}
+
+a:hover {
+  background-color: transparent;
+  text-decoration: none !important;
+}
+
+.navbar {
+  border-radius: 0 !important;
+}
+
+.row.text-center > div {
+    display: inline-block;
+    float: none;
+}
+
+.field_with_errors {
+  display: inline-block;
+  float: none;
+ }
+
+ #error_explanation {
+    border: none;
+    display: inline-block;
+    float: none;
+}
+
+@-webkit-keyframes fontfix {
+    from { opacity: 1; }
+    to   { opacity: 1; }
+}

@@ -8,8 +8,16 @@ class HooksController < ApplicationController
     order.recipient_name = "#{params[:Field3]} #{params[:Field4]}"
     order.recipient_address = params[:Field12]
     order.date = Date.strptime(params[:Field232], "%Y%m%d")
-    order.number = params[:Field15].to_i
     order.items = "#{params[:Field116]} #{params[:Field221]}"
+    if params[:Field119]
+      order.items << "\n#{params[:Field119]} #{params[:Field222]}"
+    end
+    if params[:Field118]
+      order.items << "\n#{params[:Field118]} #{params[:Field223]}"
+    end
+    if params[:Field117]
+      order.items << "\n#{params[:Field117]} #{params[:Field224]}"
+    end
     order.message = params[:Field234]
     order.anonymous = params[:Field336]
     order.venmo_username = params[:Field230]
