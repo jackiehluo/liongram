@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy,
+                                   :confirm_payment, :confirm_delivery]
 
   # GET /orders
   # GET /orders.json
@@ -68,6 +69,28 @@ class OrdersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def confirm_payment
+    if @order.confirm_payment
+      OrdersMailer.payment_confirmation(@order).deliver_now
+      flash[:success] = "Payment confirmation sent!"
+      redirect_to root_url
+    else
+      flash[:error] = "That didn't work!"
+      redirect_to root_url
+    end
+  end
+
+  def confirm_delivery
+    if @order.confirm_delivery
+      OrdersMailer.delivery_confirmation(@order).deliver_now
+      flash[:success] = "Delivery confirmation sent!"
+      redirect_to root_url
+    else
+      flash[:error] = "That didn't work!"
+      redirect_to root_url
     end
   end
 

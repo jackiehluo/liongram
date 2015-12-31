@@ -35,6 +35,18 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :orders do
+    member do
+        get :confirm_payment
+    end
+  end
+
+  resources :orders do
+    member do
+        get :confirm_delivery
+    end
+  end
+
   scope '/hooks', :controller => :hooks do
     post :new_order_callback
   end

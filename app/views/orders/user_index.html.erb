@@ -6,7 +6,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th colspan="2"></th>
+        <th></th>
         <th class="text-center">Buyer Name</th>
         <th class="text-center">Buyer Email</th>
         <th class="text-center">Recipient Name</th>
@@ -20,8 +20,13 @@
     <tbody>
       <% @orders.each do |order| %>
         <tr>
-          <td><%= link_to "<i class=\"fa fa-credit-card-alt\"></i>".html_safe, order_path(order) %></td>
-          <td><%= link_to "<i class=\"fa fa-paper-plane\"></i>".html_safe, edit_order_path(order) %></td>
+          <td>
+            <% if !order.paid %>
+              <%= link_to "<i class=\"fa fa-credit-card-alt\"></i>".html_safe, confirm_payment_order_path(order) %>
+            <% elsif !order.delivered %>
+              <%= link_to "<i class=\"fa fa-paper-plane\"></i>".html_safe, confirm_delivery_order_path(order) %>
+            <% end %>
+          </td>
           <td><%= order.buyer_name %></td>
           <td><%= order.buyer_email %></td>
           <td><%= order.recipient_name %></td>

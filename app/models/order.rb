@@ -12,4 +12,16 @@ class Order
   field :message, type: String
   field :anonymous, type: Boolean
   field :venmo_username, type: String
+  field :paid, type: Boolean
+  field :delivered, type: Boolean
+
+  def confirm_payment
+    self.paid = true
+    save!(:validate => false)
+  end
+
+  def confirm_delivery
+    self.delivered = true
+    save!(:validate => false)
+  end
 end
