@@ -15,6 +15,7 @@ class Order
   field :paid, type: Boolean, default: false
   field :delivered, type: Boolean, default: false
   field :created_at, type: DateTime, default: ->{ Time.now }
+  field :delivered_at, type: DateTime
 
   def confirm_payment
     self.paid = true
@@ -23,6 +24,7 @@ class Order
 
   def confirm_delivery
     self.delivered = true
+    self.delivered_at = Time.now
     save!(:validate => false)
   end
 end

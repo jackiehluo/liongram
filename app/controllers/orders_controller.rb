@@ -14,7 +14,8 @@ class OrdersController < ApplicationController
 
   # GET /my_orders
   def user_index
-    @orders = @current_user.orders
+    @current_orders = @current_user.orders.where(:delivered => false)
+    @past_orders = @current_user.orders.where(:delivered => true)
   end
 
   # GET /orders/1
