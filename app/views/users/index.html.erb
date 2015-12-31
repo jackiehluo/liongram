@@ -25,8 +25,8 @@
             <td><%= user.email %></td>
             <td><%= link_to (user.admin ? "Yes" : "No"), change_admin_status_user_path(user) %></td>
             <td><%= link_to (user.approved ? "Approved" : "Pending"), approve_user_path(user) %></td>
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
-            <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to "<i class=\"fa fa-pencil\"></i>".html_safe, edit_user_path(user) %></td>
+            <td><%= link_to "<i class=\"fa fa-trash\"></i>".html_safe, user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>

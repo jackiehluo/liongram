@@ -6,6 +6,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th colspan="2"></th>
         <th class="text-center">Buyer Name</th>
         <th class="text-center">Buyer Email</th>
         <th class="text-center">Recipient Name</th>
@@ -19,15 +20,17 @@
     <tbody>
       <% @orders.each do |order| %>
         <tr>
+          <td><%= link_to "<i class=\"fa fa-credit-card-alt\"></i>".html_safe, order_path(order) %></td>
+          <td><%= link_to "<i class=\"fa fa-paper-plane\"></i>".html_safe, edit_order_path(order) %></td>
           <td><%= order.buyer_name %></td>
           <td><%= order.buyer_email %></td>
           <td><%= order.recipient_name %></td>
           <td><%= order.recipient_address %></td>
           <td><%= order.date %></td>
           <td><%= order.venmo_username %></td>
-          <td><%= link_to 'Show', order_path(order) %></td>
-          <td><%= link_to 'Edit', edit_order_path(order) %></td>
-          <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to "<i class=\"fa fa-eye\"></i>".html_safe, order_path(order) %></td>
+          <td><%= link_to "<i class=\"fa fa-pencil\"></i>".html_safe, edit_order_path(order) %></td>
+          <td><%= link_to "<i class=\"fa fa-trash\"></i>".html_safe, order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
