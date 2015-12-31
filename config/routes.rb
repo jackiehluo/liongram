@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'session/new'
 
   root 'orders#user_index'
-  get 'orders' => 'orders#index'
+  get 'current_orders' => 'orders#index'
+  get 'past_orders' => 'orders#past_index'
 
   get 'register' => 'users#new'
   get 'users' => 'users#index'

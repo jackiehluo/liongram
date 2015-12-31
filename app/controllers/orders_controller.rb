@@ -5,7 +5,11 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.where(:delivered => false)
+  end
+
+  def past_index
+    @orders = Order.where(:delivered => true)
   end
 
   # GET /my_orders
