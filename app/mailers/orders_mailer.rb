@@ -3,13 +3,13 @@ class OrdersMailer < ActionMailer::Base
 
   def payment_confirmation(order)
     @order = order
-    mail(:to => "#{order.buyer_name} <#{order.buyer_name}>",
+    mail(:to => "#{order.buyer_name} <#{order.buyer_email}>",
          :subject => "Liongram: Payment Confirmation")
   end
 
   def delivery_confirmation(order)
     @order = order
-    mail(:to => "#{order.buyer_name} <#{order.buyer_name}>",
+    mail(:to => "#{order.buyer_name} <#{order.buyer_email}>",
          :subject => "Liongram: Delivery Confirmation")
   end
 end
