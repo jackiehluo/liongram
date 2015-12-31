@@ -8,10 +8,10 @@ class User
   field :name, type: String
   field :email, type: String
   field :password_digest, type: String
-  field :confirmed, type: Boolean
+  field :confirmed, type: Boolean, default: false
   field :confirm_token, type: String
-  field :approved, type: Boolean
-  field :admin, type: Boolean
+  field :approved, type: Boolean, default: false
+  field :admin, type: Boolean, default: false
 
   has_secure_password
   validates_presence_of :name, :email, :password
@@ -35,11 +35,7 @@ class User
   end
 
   def toggle_admin
-    if self.admin
-      self.admin = !self.admin
-    else
-      self.admin = true
-    end
+    self.admin = !self.admin
     save!(:validate => false)
   end
 

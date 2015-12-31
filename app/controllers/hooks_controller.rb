@@ -9,13 +9,13 @@ class HooksController < ApplicationController
     order.recipient_address = params[:Field12]
     order.date = Date.strptime(params[:Field232], "%Y%m%d")
     order.items = "#{params[:Field116]} #{params[:Field221]}"
-    if params[:Field119]
+    if params[:Field119].length > 0
       order.items << "<br>#{params[:Field119]} #{params[:Field222]}"
     end
-    if params[:Field118]
+    if params[:Field118].length > 0
       order.items << "<br>#{params[:Field118]} #{params[:Field223]}"
     end
-    if params[:Field117]
+    if params[:Field117].length > 0
       order.items << "<br>#{params[:Field117]} #{params[:Field224]}"
     end
     order.message = params[:Field234]

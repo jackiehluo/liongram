@@ -12,8 +12,9 @@ class Order
   field :message, type: String
   field :anonymous, type: Boolean
   field :venmo_username, type: String
-  field :paid, type: Boolean
-  field :delivered, type: Boolean
+  field :paid, type: Boolean, default: false
+  field :delivered, type: Boolean, default: false
+  field :created_at, type: DateTime, default: ->{ Time.now }
 
   def confirm_payment
     self.paid = true
