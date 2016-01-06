@@ -41,7 +41,9 @@
         </tr>
       <% end %>
     </tbody>
-  </table><br><br>
+  </table>
+  <%= will_paginate @current_orders %>
+  <br><br><br><br><br>
 
   <h3>Past Orders</h3>
 
@@ -74,6 +76,7 @@
       <% end %>
     </tbody>
   </table>
+  <%= will_paginate @past_orders %>
 
   <br>
 </div>

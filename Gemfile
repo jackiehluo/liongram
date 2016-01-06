@@ -27,6 +27,9 @@ gem 'mongoid', '~> 5.0.0.beta'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Allow pagination in tables
+gem 'will_paginate_mongoid'
+
 # Add environment variables locally
 gem 'figaro', "~> 0.7.0"
 

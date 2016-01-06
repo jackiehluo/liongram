@@ -5,17 +5,23 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.where(:delivered => false)
+    @orders = Order.where(:delivered => false).paginate(:page => params[:page],
+                                                        :per_page => 20)
   end
 
   def past_index
-    @orders = Order.where(:delivered => true)
+    @orders = Order.where(:delivered => true).paginate(:page => params[:page],
+                                                      :per_page => 20)
   end
 
   # GET /my_orders
   def user_index
-    @current_orders = @current_user.orders.where(:delivered => false)
-    @past_orders = @current_user.orders.where(:delivered => true)
+    @current_orders = @current_user.orders.where(:delivered => false).paginate(
+                                                        :page => params[:page],
+                                                        :per_page => 10)
+    @past_orders = @current_user.orders.where(:delivered => true).paginate(
+                                                        :page => params[:page],
+                                                        :per_page => 10)
   end
 
   # GET /orders/1
