@@ -1,14 +1,22 @@
 <html>
   <head>
     <meta content = 'text/html; charset = UTF-8' http-equiv = 'Content-Type' />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+      body {
+        font-family: 'Raleway';
+      }
+      h1, h2, h3, h4, h5, h6, strong {
+        font-family: 'Raleway';
+        font-weight: 700;
+      }
+    </style>
   </head>
-   
   <body>
-    <img align="center" alt="" src="https://gallery.mailchimp.com/ba4a81e16e54b1e8325c76e56/images/cb8837f4-0ea8-4928-a66a-284de152cfa9.jpg" width="564" style="max-width: 5616px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"><br>
-    <p>Hey, <%= @order.buyer_name %>!</p>
-    <p>
-       Thanks for ordering from Liongram! We've received your payment via Venmo, and the order is currently in the works.
-    </p>
-    <p>Let us know if you have any questions. Have a lovely day!</p>
+    <img align="center" alt="" src="https://gallery.mailchimp.com/ba4a81e16e54b1e8325c76e56/images/cb8837f4-0ea8-4928-a66a-284de152cfa9.jpg" width="564" style="max-width: 100%;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"><br>
+    <h1>Your Liongram order has been confirmed!</h1>
+    <p>Thanks so much for ordering a Liongram. We've received your Venmo payment! Now comes the fun part: the Liongram delivery. We'll send you a delivery confirmation once your Liongram has been safely delivered.</p>
+    <p>Let us know if you have any questions or concerns!</p>
+    <p>Love,<br>The Liongram Team</p>
   </body>
 </html>

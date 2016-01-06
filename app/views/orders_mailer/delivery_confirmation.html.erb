@@ -1,14 +1,21 @@
 <html>
   <head>
     <meta content = 'text/html; charset = UTF-8' http-equiv = 'Content-Type' />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+      body {
+        font-family: 'Raleway';
+      }
+      h1, strong {
+        font-weight: 700;
+      }
+    </style>
   </head>
-   
   <body>
-    <img align="center" alt="" src="https://gallery.mailchimp.com/ba4a81e16e54b1e8325c76e56/images/30702ded-79c7-4c60-8ce4-1b42bbc5bfac.jpg" width="564" style="max-width: 5224px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"><br>
-    <p>Hey, <%= @order.buyer_name %>!</p>
-    <p>
-       We just delivered your Liongram to <%= @order.recipient_name %> in <%= @order.recipient_address %>!
-    </p>
-    <p>Let us know if you have any questions. Have a lovely day!</p>
+    <img align="center" alt="" src="https://gallery.mailchimp.com/ba4a81e16e54b1e8325c76e56/images/30702ded-79c7-4c60-8ce4-1b42bbc5bfac.jpg" width="564" style="max-width: 100%;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;">
+    <h1>Your Liongram order has been delivered!</h1>
+    <p>Thanks so much for ordering a Liongram. Your Liongram has been delivered to <%= @order.recipient_name %> in <%= @order.recipient_address %>! To thank you for being a Liongram customer, we'd like to offer <strong>10% off</strong> your next order.</p>
+    <p>Let us know if you have any questions or concerns!</p>
+    <p>Love,<br>The Liongram Team</p>
   </body>
 </html>
