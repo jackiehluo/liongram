@@ -15,35 +15,35 @@
     <div class="row">
       <div class="col-md-2 col-md-offset-4">
         <%= f.label :buyer_name, "Buyer Name" %><br>
-        <%= f.text_field :buyer_name %>
+        <%= f.text_field :buyer_name, {class: "form-control"} %>
       </div>
       <div class="col-md-2">
         <%= f.label :buyer_email, "Buyer Email" %><br>
-        <%= f.text_field :buyer_email %>
+        <%= f.text_field :buyer_email, {class: "form-control"} %>
       </div>
     </div><br>
     <div class="row">
       <div class="col-md-2 col-md-offset-4">
         <%= f.label :recipient_name, "Recipient Name" %><br>
-        <%= f.text_field :recipient_name %>
+        <%= f.text_field :recipient_name, {class: "form-control"} %>
       </div>
       <div class="col-md-2">
         <%= f.label :recipient_address, "Recipient Address" %><br>
-        <%= f.text_field :recipient_address %>
+        <%= f.text_field :recipient_address, {class: "form-control"} %>
       </div>
     </div><br>
     <div class="row">
       <%= f.label :date %><br>
-      <%= f.date_select :date %>
+      <%= f.date_select :date, {}, {class: "form-control date-select"} %>
     </div><br>
     <div class="row">
       <div class="col-md-2 col-md-offset-4">
         <%= f.label :items %><br>
-        <%= f.text_area :items, :rows => "4" %>
+        <%= f.text_area :items, {class: "form-control", rows: "4"} %>
       </div>
       <div class="col-md-2">
         <%= f.label :message %><br>
-        <%= f.text_area :message, :rows => "4" %>
+        <%= f.text_area :message, {class: "form-control", rows: "4"} %>
       </div>
     </div><br>
     <div class="row">
@@ -53,12 +53,14 @@
       </div>
       <div class="col-md-2">
         <%= f.label :venmo_username, "Venmo Username" %><br>
-        <%= f.text_field :venmo_username %>
+        <%= f.text_field :venmo_username, {class: "form-control"} %>
       </div>
     </div><br>
     <div class="row">
-      <%= f.label :deliverer, "Deliverer" %><br>
-      <%= collection_select(:user_id, :id, @users, :id, :name) %>
+      <div class="col-md-2 col-md-offset-5">
+        <%= f.label :deliverer, "Deliverer" %><br>
+        <%= collection_select :user_id, :id, @users, :id, :name, {}, {class: "form-control"} %>
+      </div>
     </div><br>
     <div class="actions">
       <%= f.submit "Submit", :class => "btn btn-success" %>
