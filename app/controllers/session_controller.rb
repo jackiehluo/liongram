@@ -11,17 +11,17 @@ class SessionController < ApplicationController
         session[:user_id] = user.id
         redirect_to root_url
       elsif user.confirmed
-        flash[:error] = "You need to be approved by an admin first!"
+        flash[:danger] = "You need to be approved by an admin first!"
         render "new"
       elsif user.approved
-        flash[:error] = "You need to confirm your email first!"
+        flash[:danger] = "You need to confirm your email first!"
         render "new"
       else
-        flash[:error] = "You need to confirm your email and be approved by an admin."
+        flash[:danger] = "You need to confirm your email and be approved by an admin."
         render "new"
       end
     else
-      flash[:error] = "Login failed."
+      flash[:danger] = "Login failed."
       render "new"
     end
   end
