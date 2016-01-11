@@ -67,6 +67,14 @@ a:hover {
   border-radius: 0 !important;
 }
 
+.navbar img {
+  height: 40px;
+}
+
+.navbar-nav li a {
+ line-height: 40px !important;
+}
+
 .row.text-center > div {
     display: inline-block;
     float: none;
